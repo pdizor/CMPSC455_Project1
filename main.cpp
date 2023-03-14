@@ -12,6 +12,7 @@ int main() {
     
     double vectorB[matrixSize]; // vector for b
     double vectorC[matrixSize]; // vector for c
+    double vectorX[matrixSize]; // vector for x, the answer
     double matrixA[matrixSize][matrixSize]; // matrix for A
     double matrixL[matrixSize][matrixSize]; // matrix for L
     double matrixU[matrixSize][matrixSize]; // matrix for U
@@ -35,7 +36,7 @@ int main() {
     // - Step 4 -
     // TODO: Guassian Elimination:
     // The Following algorith doesn't work if the diagonals are ever zero. 
-    /* 
+    ///* 
     double coefficientM;
     for (int h = 0; h < matrixSize-1; h++) {
       for (int i = h+1; i < matrixSize-1; i++) {
@@ -48,7 +49,7 @@ int main() {
         }
       }
     }
-    */
+    //*/
     // - Step 5 -
 
     // - Step 6 -
@@ -56,7 +57,7 @@ int main() {
     // - Step 7 - 
     cout << "\n The solution values of x for Ax = b: \n";
     for (int i = 0; i < matrixSize; i++) {
-      cout << "x" << i+1 << ": " << vectorB[i];
+      cout << "x" << i+1 << ": " << vectorX[i];
     }
     
     // - Step 8 - 
