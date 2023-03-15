@@ -36,10 +36,9 @@ int main() {
     // - Step 4 -
     // TODO: Guassian Elimination:
     // The Following algorith doesn't work if the diagonals are ever zero. 
-    ///* 
     double coefficientM;
     for (int h = 0; h < matrixSize-1; h++) {
-      for (int i = h+1; i < matrixSize-1; i++) {
+      for (int i = h+1; i < matrixSize; i++) {
         if (matrixA[h][h] != 0) {
           coefficientM = matrixA[i][h]/matrixA[h][h];
           matrixL[i][h] = coefficientM;
@@ -49,7 +48,13 @@ int main() {
         }
       }
     }
-    //*/
+    // Testing Purposes : Outputs A post Guassian Elimination
+    for (int i = 0; i < matrixSize; i++) {
+      for (int j = 0; j < matrixSize; j++) {
+        cout << matrixA[i][j] << " ";
+      }
+      cout << "\n";
+    }
     // - Step 5 -
 
     // - Step 6 -
