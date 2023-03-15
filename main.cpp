@@ -81,7 +81,7 @@ int main() {
                 unique = false;
         }
         if (!unique) {
-            cout << "\nSystem has infinitely many solutions" << endl;
+            cout << "\nSystem has infinitely many solutions or requires row swapping." << endl;
             return 0;
         }
 
