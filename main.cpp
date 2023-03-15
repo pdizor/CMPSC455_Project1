@@ -52,7 +52,7 @@ int main() {
     for (int i = 0; i < matrixSize; i++) {
       for (int j = 0; j < matrixSize; j++) {
         cout << matrixA[i][j] << " ";
-        matrixL[i][j] = matrixA[i][j];
+        matrixU[i][j] = matrixA[i][j];
       }
       cout << "\n";
     }
