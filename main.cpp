@@ -48,14 +48,42 @@ int main() {
         }
       }
     }
-    // Testing Purposes : Outputs A post Guassian Elimination
+    
+    /* The following 3 nested for loops are for testing purposes:
+       First Nested loop: Outputs Matrix A post Guassian Elimination
+       Also, Sets Matrix U equal to Matrix A (Important!)
+       Adds the missing 1 or 0 values to Matrix L when i = j or i < j, respectively (Important!)
+    */
+    cout << "\nMatrix A: \n";
     for (int i = 0; i < matrixSize; i++) {
       for (int j = 0; j < matrixSize; j++) {
+        if (i == j) {
+          matrixL[i][j] = 1;
+        } else if (i < j) {
+          matrixL[i][j] = 0;
+        }
         cout << matrixA[i][j] << " ";
         matrixU[i][j] = matrixA[i][j];
       }
       cout << "\n";
     }
+    cout << "\nMatrix L: \n";
+    // Outputs Matrix L
+    for (int i = 0; i < matrixSize; i++) {
+      for (int j = 0; j < matrixSize; j++) {
+        cout << matrixL[i][j] << " ";
+      }
+      cout << "\n";
+    }
+    cout << "\nMatrix U: \n";
+    // Outputs Matrix U
+    for (int i = 0; i < matrixSize; i++) {
+      for (int j = 0; j < matrixSize; j++) {
+        cout << matrixU[i][j] << " ";
+      }
+      cout << "\n";
+    }
+    cout << "\n";
     
     // - Step 5 - Solve for the c vector using L and b.
     double sumProductC = 0;
