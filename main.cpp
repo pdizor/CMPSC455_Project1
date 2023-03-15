@@ -56,9 +56,38 @@ int main() {
       }
       cout << "\n";
     }
-    // - Step 5 -
-
-    // - Step 6 -
+    
+    // - Step 5 - Solve for the c vector using L and b.
+    double sumProductC = 0;
+    for(int i = 0; i < matrixSize; i++) { 
+      // ^ Loops through every row
+      if(i > 0) {
+        for(int j = 0; j < i; j++) { 
+        // ^ Loops through the columns where j < i
+        sumProductC += (matrixL[i][j] * vectorC[j]); 
+        // ^ Used to calculate ci which is based on all previous c values.
+        }
+      }
+      vectorC[i] = vectorB[i] - sumProductC; 
+      // ^ Finds ci using bi and all previous values of c with their corresponding multipliers in matrix L.
+      sumProductC = 0;
+    }
+    
+    // - Step 6 - Solve for the x vector using U and c.
+    double sumProductX = 0;
+    for(int i = matrixSize-1; i >= 0; i--) { 
+      // ^ Loops through every row starting at the end
+      if(i < matrixSize-1) {
+        for(int j = matrixSize-1; j > i; j--) { 
+          // ^ Loops through every column starting at the end where j > i
+          sumProductX += vectorX[j] * matrixU[i][j]; 
+          // ^ Used to calculate xi to fill in what was already found for i after the last one
+        }
+      }
+      vectorX[i] = ( (vectorC[i] - sumProductX) / matrixU[i][i] ); 
+      // ^ Finds xi by taking the sum of ci and the sumProductX for row i, then dividing the sum by Matrix value uii
+      sumProductX = 0;
+    }
 
     // - Step 7 - 
     cout << "\n The solution values of x for Ax = b: \n";
