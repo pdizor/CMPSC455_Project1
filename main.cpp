@@ -8,7 +8,7 @@ int main() {
         // - Step 1 -
         int matrixSize;
         cout << "Input the size of the n x n matrix (must be a whole number >= 2): ";
-        cin >> matrixSize; // Requests the size of the matrix before initiallizing the matrices.
+        cin >> matrixSize; // Requests the size of the matrix before initializing the matrices.
 
         double* vectorB = new double[matrixSize]; // vector for b
         double* vectorC = new double[matrixSize]; // vector for c
@@ -58,8 +58,7 @@ int main() {
         
 
         // - Step 4 -
-        // TODO: Guassian Elimination:
-        // The Following algorith doesn't work if the diagonals are ever zero. 
+        // Gaussian Elimination:
         double coefficientM;
         for (int h = 0; h < matrixSize - 1; h++) {
             for (int i = h + 1; i < matrixSize; i++) {
@@ -86,7 +85,7 @@ int main() {
         }
 
         /* The following 3 nested for loops are for testing purposes:
-           First Nested loop: Outputs Matrix A post Guassian Elimination
+           First Nested loop: Outputs Matrix A post Gaussian Elimination
            Also, Sets Matrix U equal to Matrix A (Important!)
            Adds the missing 1 or 0 values to Matrix L when i = j or i < j, respectively (Important!)
         */
