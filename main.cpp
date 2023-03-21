@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// ඞ
 int main() {
     bool repeat = true;
     int input;
